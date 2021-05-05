@@ -19,4 +19,4 @@ Open Profiles/default and change the username and password to your SAP account.
 - Stop recording then copy and paste the content from Scripting Tracker into the test case script
 
 ## Videos tutorial
-- Recording script with Scripting Tracker: Videos/Record test script tutorial.mp4
+- Recording script with Scripting Tracker: [Videos/Record test script tutorial.mp4](Videos/Record test script tutorial.mp4)
