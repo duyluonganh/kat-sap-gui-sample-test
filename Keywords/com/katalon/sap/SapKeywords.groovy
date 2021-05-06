@@ -47,7 +47,7 @@ public class SapKeywords {
 				GUIApp.invoke("findById", "con[0]/ses[0]").toDispatch()
 				);
 	}
-	
+
 	@Keyword
 	static ActiveXComponent  getSession() {
 		return session
@@ -58,7 +58,8 @@ public class SapKeywords {
 		session = null;
 		ComThread.Release()
 	}
-	
+
+	@Keyword
 	def static login(String username, String password) {
 		def obj;
 		obj = new ActiveXComponent(session.invoke("findById", "wnd[0]/usr/txtRSYST-BNAME").toDispatch());
@@ -67,5 +68,47 @@ public class SapKeywords {
 		obj.setProperty("text", "Welcome1");
 		obj = new ActiveXComponent(session.invoke("findById", "wnd[0]").toDispatch());
 		obj.invoke("sendVKey", 0);
+	}
+
+	@Keyword
+	def static getElementProperty(String locator, String propertyName) {
+		def obj;
+		obj = new ActiveXComponent(session.invoke("findById", locator).toDispatch());
+		return obj.getProperty(propertyName).toJavaObject()
+	}
+
+	@Keyword
+	def static invokeElementAction(String locator, String action) {
+		def obj;
+		obj = new ActiveXComponent(session.invoke("findById", locator).toDispatch());
+		obj.invoke(action)
+	}
+
+	@Keyword
+	def static invokeElementAction(String locator, String action, String args) {
+		def obj;
+		obj = new ActiveXComponent(session.invoke("findById", locator).toDispatch());
+		obj.invoke(action, args)
+	}
+
+	@Keyword
+	def static setText(String locator, String text) {
+		def obj;
+		obj = new ActiveXComponent(session.invoke("findById", locator).toDispatch());
+		obj.setProperty('text', text)
+	}
+
+	@Keyword
+	def static click(String locator) {
+		def obj;
+		obj = new ActiveXComponent(session.invoke("findById", locator).toDispatch());
+		obj.invoke('press')
+	}
+	
+	@Keyword
+	def static sendKey(String locator, int key) {
+		def obj;
+		obj = new ActiveXComponent(session.invoke("findById", locator).toDispatch());
+		obj.invoke('sendVKey', key)
 	}
 }
