@@ -3,7 +3,7 @@
    <description></description>
    <name>Text</name>
    <tag></tag>
-   <locator>/Window/List[1]/ListItem[1]/Text[1]</locator>
+   <locator>//Window/Pane[1]/Pane[1]/Pane[2]/Pane[1]/List[1]/ListItem[1]/Text[1]</locator>
    <locatorStrategy>XPATH</locatorStrategy>
    <properties>
       <isSelected>false</isSelected>
