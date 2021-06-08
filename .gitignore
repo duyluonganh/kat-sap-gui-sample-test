@@ -19,3 +19,7 @@ build
 /.settings/
 /.classpath
 .svn/
+
+.cache
+
+settings/
